@@ -1,1 +1,7 @@
-#hai
+Hai guys!
+In this we use Logistic Regression model to predict the survival list on Titanic data set from Kaggle.
+It include:
+ -> Data Cleaning
+ -> Feature Selection
+ -> Model Training and Evaluating
+ -> Predicting with New data
