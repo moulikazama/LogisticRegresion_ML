@@ -6,6 +6,7 @@
 
 #libraries
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -13,6 +14,10 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 # In[2]:
 
+import os
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
 
 #funtions
 def calculate_survival_stats(raw_data: pd.core.frame.DataFrame):
@@ -31,9 +36,8 @@ def calculate_survival_stats(raw_data: pd.core.frame.DataFrame):
 
 # In[3]:
 
-
-data = pd.read_csv(r"C:\Users\ADMIN\Desktop\dataset\titanic train set.csv")
-data_test = pd.read_csv(r"C:\Users\ADMIN\Desktop\dataset\test.csv")
+data = pd.read_csv("/kaggle/input/titanic/train.csv")
+data_test = pd.read_csv("/kaggle/input/titanic/test.csv")
 colm = data.columns.values
 # Handle categorical variables (e.g., 'Sex')
 data['Sex'] = data['Sex'].map({'male': 0, 'female': 1})
